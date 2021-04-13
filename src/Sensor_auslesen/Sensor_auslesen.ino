@@ -5,8 +5,9 @@ void setup() {
 
 void loop() {
   int val;
+  int val1;
   val = analogRead(A0);
-  Serial.println(val);
+  //Serial.println(val);
   delay(100);
   
   if (val <= 400){
@@ -15,4 +16,6 @@ void loop() {
     digitalWrite(12, LOW);
   }
   
+  val1 = map (val, 596, 283, 0, 100);
+  Serial.println(val1);
 }
