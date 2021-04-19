@@ -21,9 +21,9 @@ void loop() {
  // Serial.println(val);  //Falls man die Pumpe mit den normalen Werten statt mit Prozent-Angaben Steuern will
   
     if (val1 <= 20){       //Die Pumpe geht 20% Feuchtigkeit an
-    digitalWrite(12, HIGH);
+    digitalWrite(2, HIGH);
   }else if (val1 >= 20){   //Die Pumpe geht 20% Feuchtigkeit aus
-    digitalWrite(12, LOW);
+    digitalWrite(2, LOW);
   }
 
 
