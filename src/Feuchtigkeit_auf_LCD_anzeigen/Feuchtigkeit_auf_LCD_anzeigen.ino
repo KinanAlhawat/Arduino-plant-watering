@@ -4,7 +4,7 @@ LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
 
 void setup() {
   Serial.begin(1200);
-  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
   
   lcd.begin(16, 2);
   // Print a message to the LCD.
@@ -20,13 +20,11 @@ void loop() {
   Serial.println(val1);   
  // Serial.println(val);  //Falls man die Pumpe mit den normalen Werten statt mit Prozent-Angaben Steuern will
   
-    if (val1 <= 20){       //Die Pumpe geht 20% Feuchtigkeit an
-    digitalWrite(2, HIGH);
-  }else if (val1 >= 20){   //Die Pumpe geht 20% Feuchtigkeit aus
-    digitalWrite(2, LOW);
+    if (val1 >= 20){       //Die Pumpe geht 20% Feuchtigkeit an
+    digitalWrite(13, HIGH);
+  }else if (val1 <= 20){   //Die Pumpe geht 20% Feuchtigkeit aus
+    digitalWrite(13, LOW);
   }
-
-
   
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
